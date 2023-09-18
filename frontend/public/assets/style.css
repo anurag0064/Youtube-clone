@@ -1,0 +1,19 @@
+.img{
+    width: 82px;
+    height: 80px;
+}
+
+.cricket{
+    width: 250px;
+}
+.gg{
+    gap: 80px;
+    list-style-type: none;
+}
+.ani{
+    font-size: 14px;
+    font-weight: 500;
+}
+.dev{
+    width: 200px;
+}
