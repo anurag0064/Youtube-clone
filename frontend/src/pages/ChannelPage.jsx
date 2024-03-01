@@ -1,12 +1,12 @@
 
 import Navbar from '../components/header/Navbar'
 import '../App.css'
-import Video from '../components/UI/Video'
 import { useEffect,useState } from 'react'
 import ChannelData from '../data/channel.json';
 import Sidebar from '../components/header/Sidebar';
-import video from '../data/video.json';
-function ChannelPage() {
+import VideoData from '../data/video.json';
+import Video from '../components/UI/Video'
+function Channelpage() {
   const [channel, setChannel] = useState({}); 
 
   useEffect(() => { 
@@ -33,30 +33,36 @@ function ChannelPage() {
    
 
             </div>
-            <div className='col-10 p-0 '>
-                <img src={channel.banner_img} className='img-fluid'/>
+            <div className='col-10 p-0'>
+                <img src={channel.banner_img} className='img-fluid ppp'/>
                 <div className='row m-4'>
-                    <div className='col-2  '>
+                    <div className='col-2'>
                         <img src={channel.logo} className='img-fluid rounded-pill' />
                     </div>
-                    <div className='col-8 py-4 px-5'>
+                    <div className='col-8  py-4 px-5'>
                        <h2> {channel.name}</h2>
-                       <p>{channel.slug} <span>{channel.subscribers}</span> <span>{channel.videos}</span></p>
-                       <p>{channel.description}</p>
+                       <p>{channel.slug} <span>10.7M subscribers</span> <span>10K videos</span></p>
+                       <span>{channel.description}</span>
                     </div>
-                    <div className='col-2 '>
-                   <input className="btn btn-dark rounded-5" type="button" defaultValue="subscribe" />
-                   
+                    <div className='col-2'>
+                    <button type="button" className="btn btn-dark rounded-pill mt-3">Subscribe</button>
+                  
 
                     </div>
 
                 </div>
-                <div className='col mt-3 gap-5'>
+                <div className='col-12 mt-3'>
 
-<ul className="nav-underline d-flex border-bottom gg  " id="myTab" role="tablist">
+
+
+
+
+
+
+<ul className="nav nav-underline border-bottom" id="myTab" role="tablist">
     <li className="nav-item" role="presentation">
       <button
-        className="nav-link active"
+        className="nav-link active text-dark me-5"
         id="home-tab"
         data-bs-toggle="tab"
         data-bs-target="#home-tab-pane"
@@ -65,12 +71,12 @@ function ChannelPage() {
         aria-controls="home-tab-pane"
         aria-selected="true"
         >
-       Home
+        HOME
       </button>
     </li>
     <li className="nav-item" role="presentation">
       <button
-        className="nav-link text-dark"
+        className="nav-link text-dark me-5"
         id="profile-tab"
         data-bs-toggle="tab"
         data-bs-target="#profile-tab-pane"
@@ -79,12 +85,12 @@ function ChannelPage() {
         aria-controls="profile-tab-pane"
         aria-selected="false"
         >
-        Videos
+        VIDEOS
       </button>
     </li>
     <li className="nav-item" role="presentation">
       <button
-        className="nav-link"
+        className="nav-link text-dark me-5"
         id="contact-tab"
         data-bs-toggle="tab"
         data-bs-target="#contact-tab-pane"
@@ -93,13 +99,12 @@ function ChannelPage() {
         aria-controls="contact-tab-pane"
         aria-selected="false"
         >
-         Live
+         LIVE
       </button>
-      
     </li>
     <li className="nav-item" role="presentation">
       <button
-        className="nav-link"
+        className="nav-link text-dark me-5"
         id="disabled-tab"
         data-bs-toggle="tab"
         data-bs-target="#disabled-tab-pane"
@@ -109,69 +114,38 @@ function ChannelPage() {
         aria-selected="false"
         disabled=""
         >
-        Playlist
+        PLAYLISTS
       </button>
     </li>
     <li className="nav-item" role="presentation">
       <button
-        className="nav-link"
-        id="disabled-tab"
+        className="nav-link text-dark me-5"
+        id="home-tab"
         data-bs-toggle="tab"
-        data-bs-target="#disabled-tab-pane"
+        data-bs-target="#new-tab-pane"
         type="button"
         role="tab"
-        aria-controls="disabled-tab-pane"
-        aria-selected="false"
-        disabled=""
+        aria-controls="home-tab-pane"
+        aria-selected="true"
         >
-        Community
+      COMMUNITY
       </button>
     </li>
     <li className="nav-item" role="presentation">
       <button
-        className="nav-link"
-        id="disabled-tab"
+        className="nav-link text-dark me-5"
+        id="home-tab"
         data-bs-toggle="tab"
-        data-bs-target="#disabled-tab-pane"
+        data-bs-target="#old-tab-pane"
         type="button"
         role="tab"
-        aria-controls="disabled-tab-pane"
-        aria-selected="false"
-        disabled=""
+        aria-controls="home-tab-pane"
+        aria-selected="true"
         >
-        Store
+        CHANNELS
       </button>
     </li>
-    <li className="nav-item" role="presentation">
-      <button
-        className="nav-link"
-        id="disabled-tab"
-        data-bs-toggle="tab"
-        data-bs-target="#disabled-tab-pane"
-        type="button"
-        role="tab"
-        aria-controls="disabled-tab-pane"
-        aria-selected="false"
-        disabled=""
-        >
-        Channels
-      </button>
-    </li>
-    <li className="nav-item" role="presentation">
-      <button
-        className="nav-link"
-        id="disabled-tab"
-        data-bs-toggle="tab"
-        data-bs-target="#disabled-tab-pane"
-        type="button"
-        role="tab"
-        aria-controls="disabled-tab-pane"
-        aria-selected="false"
-        disabled=""
-        >
-        About
-      </button>
-    </li>
+    
   </ul>
   
 
@@ -185,20 +159,23 @@ function ChannelPage() {
       aria-labelledby="home-tab"
       tabIndex={0}
       >
-       <div className='row mt-3 mx-0'>
-       {video && video.map(item => {
+         <div className='row mt-3 mx-0'>
+       {VideoData && VideoData.map(item => {
 
        return (
-        <div className='col-4'>
+        <div className='col-3  '>
         <Video video={item}/>
         </div>
        
        )
 
-       })};
-       
+       })}
      
   </div>
+
+     
+  
+      
     </div>
     <div
       className="tab-pane fade"
@@ -230,11 +207,32 @@ function ChannelPage() {
       ,em cl
       
     </div>
+    <div
+      className="tab-pane fade"
+      id="new-tab-pane"
+      role="tabpanel"
+      aria-labelledby="disabled-tab"
+      tabIndex={0}
+      >
+    
+      ,em cl
+      
+    </div>
+    <div
+      className="tab-pane fade"
+      id="old-tab-pane"
+      role="tabpanel"
+      aria-labelledby="disabled-tab"
+      tabIndex={0}
+      >
+    
+      ,em cl
+      
+    </div>
   </div>
 
 
 </div>
-
             </div>
 
         </div>
@@ -248,4 +246,4 @@ function ChannelPage() {
   )
 }
 
-export default ChannelPage
+export default Channelpage;

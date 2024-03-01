@@ -1,60 +1,68 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from 'axios';
+import Auth from "../layouts/auth";
 
 
+const Signin = () => {
+  const [name, SetName] = useState('');
+  const [email, SetEmail] = useState('');
+  const [password, SetPass] = useState('');
+  const [success, SetSuccess] = useState('');
+  const [error, SetError] = useState('');
 
-const Signup = () => {
 
-  const[name, SetName] = useState();
-  const[email, SetEmail] = useState();
-  const[password, SetPass] = useState();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    SetSuccess('');
+    SetError('');
 
-    const handleSubmit = async(e) => {
+    if (name == "" || email == "" || password == "") {
+      SetError("please fill all fields!");
+      return false;
+    }
 
-      e.preventDefault();
-         const res = await axios.post("http://127.0.0.1:5000/register",{
-          name,email,password
-         });
-       console.log(res);
-      
+    try {
 
-    } 
+      const res = await axios.post("http://127.0.0.1:5000/register", {
+        name, email, password
+      });
 
-    return (
-        <>
-        <div className="container">
-            <div className="card rounded-5 w-50 m-auto mt-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-            
+      if (res.data.status == true) {
+        localStorage.setItem('verify_token', res.data.token);
+        window.location.href = '/VerifyRegister';
+        SetSuccess(res.data.msg);
 
-<main className="form-signin w-100 m-auto mt-5">
-  <form className="signup  form-control-lg  " onSubmit={handleSubmit}>
+      } else {
+        SetError(res.data.msg);
+
+      }
+
+    }
+
+    catch (err) {
+      SetError(err)
+
+    }
+
+  }
+
+  return (
+    <>
+    <Auth title="Register Account" alert={[error,success]}>
+   
+<form className="signin  form-control-lg  " onSubmit={handleSubmit}>
     <center>
-        <a href="/">
-    <img
-      className="mb-4"
-      src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg"
-      alt=""
-      width={200}
-      height={80}
-    />
-
-</a>
-    
-    <h1 className="h3 mb-3 fw-bold ">Please Sign in</h1>
-    
-    <div className="form-floating mb-3 w-50">
+    <div className="form-floating">
       <input
-        type="text"
+        type="name"
         className="form-control"
         id="floatingInput"
         placeholder="name@example.com"
-        onKeyUp={(e) => SetName(e.target.value)}
+      onKeyUp={(e) => SetName(e.target.value)}
       />
       <label htmlFor="floatingInput">Name</label>
     </div>
-
-    
-    <div className="form-floating mb-3 w-50">
+    <div className="form-floating mt-2">
       <input
         type="email"
         className="form-control"
@@ -64,34 +72,30 @@ const Signup = () => {
       />
       <label htmlFor="floatingInput">Email address</label>
     </div>
-
-    
-    <div className="form-floating mb-3 w-50">
+    <div className="form-floating mt-2">
       <input
-        type="Password"
+        type="text"
         className="form-control"
         id="floatingInput"
         placeholder="name@example.com"
         onKeyUp={(e) => SetPass(e.target.value)}
       />
-      <label htmlFor="floatingInput">Pssword</label>
+      <label htmlFor="floatingInput">Password</label>
     </div>
   
    
-    <button className="btn btn-danger w-50 py-2 mt-3" type="submit">
+    <button className="btn btn-danger py-2 mt-3 w-100" type="submit">
       Submit
     </button>
     <a href="/Login">
-        <p className="text-danger fw-medium mt-3">Already Have An Account</p>
+        <p className="text-danger fw-semibold small mt-3">Sign in to an existing account</p>
     </a>
-    <p className=" mb-3 text-body-secondary">© 2017–2023</p>
     </center>
   </form>
-</main>
-</div>
-</div>
-</>
-    )
+    </Auth>
+
+    </>
+  )
 }
 
-export default Signup
+export default Signin
