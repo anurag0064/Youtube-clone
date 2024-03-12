@@ -1,40 +1,43 @@
-import Home from './pages/screen/home/Home'
-import Register from './pages/auth/register/Register'
-import Login from './pages/auth/login/Login'
-import Trending from './pages/screen/trending/Trending'
-import Forgot from './pages/auth/forgot/Forgot'
-import Videopage from './pages/screen/videopage/Videopage'
-import Channelpage from './pages/screen/channelpage/ChannelPage'
-import Createvideo from './pages/screen/createvideo/Createvideo'
-import VerifyLogin from './pages/auth/verifylogin/VerifyLogin'
-import VerifyRegister from './pages/auth/verifyregister/VerifyRegister'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import Login from './pages/auth/login/Login';
+import AuthRoutes from './pages/route/authroute/Authroute';
+import ScreenRoutes from './pages/route/screenroute/Screenroute';
+import Home from './pages/screen/home/Home';
+import Trending from './pages/screen/trending/Trending';
+import Videopage from './pages/screen/videopage/Videopage';
+import Channelpage from './pages/screen/channelpage/ChannelPage';
+import Register from './pages/auth/register/Register';
+import Forgot from './pages/auth/forgot/Forgot';
+import VerifyLogin from './pages/auth/verifylogin/VerifyLogin';
+import VerifyRegister from './pages/auth/verifyregister/VerifyRegister';
 
-
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 function App() {
-
   return (
-    <>
-    
-      <Router>
+    <BrowserRouter>
       <Routes>
-       <Route path="/" element={<Home/>}/> 
-       <Route path="/trending" element={<Trending/>}/>    
-       <Route path="/verifyregister" element={<VerifyRegister/>}/>    
-       <Route path="/verifylogin" element={<VerifyLogin/>}/>    
-       <Route path="/register" element={<Register/>}/> 
-       <Route path="/login" element={<Login/>}/> 
-       <Route path="/forgot" element={<Forgot/>}/> 
-       <Route path="/videopage/:id" element={<Videopage/>}/> 
-       <Route path="/:channel" element={<Channelpage/>}/> 
-       <Route path="/createvideo" element={<Createvideo/>}/> 
+        <Route path='/auth' element={<AuthRoutes />}>
+          <Route path='/auth/login' element={<Login />} />
+          <Route path='/auth/register' element={<Register/>}/>
+          <Route path='/auth/forgot' element={<Forgot />} />
+          <Route path='/auth/verifylogin' element={<VerifyLogin />} />
+          <Route path='/auth/verifyregister' element={<VerifyRegister />} />
+        </Route>
+        </Routes >
+        <Routes>
+        <Route path="/" element={<ScreenRoutes />}>
+          <Route index element={<Home />} />
+          <Route path="/trending" element={<Trending />} />
+          <Route path="/videopage/:id" element={<Videopage />} />
+          <Route path="/:channel" element={<Channelpage />} />
+
+        </Route>
       </Routes>
-      </Router>
-      </> 
+    </BrowserRouter>
   );
-}  
+}
 
 export default App;
 

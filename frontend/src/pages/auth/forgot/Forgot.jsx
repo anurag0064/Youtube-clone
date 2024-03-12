@@ -35,10 +35,10 @@ const Forgot = () => {
     <button className="btn btn-danger w-50 py-2" type="submit">
       Next
     </button>
-    <a href="/Signin">
+    <a href="/auth/register">
         <h5 className="text-danger fw-medium mt-3 fs-6">Create New Account</h5>
     </a>
-    <a href="/Login">
+    <a href="/auth/login">
         <h5 className="text-danger fw-medium fs-6">Already Have An Account</h5>
     </a>
     <p className="mt-3 mb-3 text-body-secondary">© 2017–2023</p>

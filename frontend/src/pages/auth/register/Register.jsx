@@ -87,7 +87,7 @@ const Register = () => {
     <button className="btn btn-danger py-2 mt-3 w-100" type="submit">
       Submit
     </button>
-    <a href="/Login">
+    <a href="/auth/login">
         <p className="text-danger fw-semibold small mt-3">Sign in to an existing account</p>
     </a>
     </center>

@@ -104,10 +104,10 @@ catch(eror) {
 {!loading && <button className="btn btn-danger w-100 py-2" type="submit">
       Login
     </button> }
-    <a href="/register">
+    <a href="/auth/register">
         <h5 className="text-danger fw-medium mt-3 fs-6">Create New Account</h5>
     </a>
-    <a href="/forgot">
+    <a href="/auth/forgot">
         <h5 className="text-danger fw-medium fs-6">Forgot Password</h5>
     </a>
    
