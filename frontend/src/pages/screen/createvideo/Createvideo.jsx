@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from 'axios';
-import Navbar from '../components/header/Navbar'
-import Sidebar from "../components/header/Sidebar";
+import Navbar from "../../../components/header/Navbar";
+import Sidebar from "../../../components/header/Sidebar";
 
 
 const Createvideo=() => {

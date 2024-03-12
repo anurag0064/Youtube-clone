@@ -1,14 +1,13 @@
-
-import Home from './pages/Home'
-import Signup from './pages/Signup'
-import  Login from './pages/Login'
-import  Trending from './pages/Trending'
-import  Forget from './pages/Forget'
-import  Videopage from './pages/Videopage'
-import  ChannelPage from './pages/ChannelPage'
-import  Createvideo from './pages/createvideo'
-import VerifyRegister from './pages/VerifyRegister'
-import VerifyLogin from './pages/VerifyLogin'
+import Home from './pages/screen/home/Home'
+import Register from './pages/auth/register/Register'
+import Login from './pages/auth/login/Login'
+import Trending from './pages/screen/trending/Trending'
+import Forgot from './pages/auth/forgot/Forgot'
+import Videopage from './pages/screen/videopage/Videopage'
+import Channelpage from './pages/screen/channelpage/ChannelPage'
+import Createvideo from './pages/screen/createvideo/Createvideo'
+import VerifyLogin from './pages/auth/verifylogin/VerifyLogin'
+import VerifyRegister from './pages/auth/verifyregister/VerifyRegister'
 
 
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -22,17 +21,15 @@ function App() {
       <Router>
       <Routes>
        <Route path="/" element={<Home/>}/> 
-       <Route path="/Trending" element={<Trending/>}/>    
-       <Route path="/VerifyRegister" element={<VerifyRegister/>}/>    
-       <Route path="/VerifyLogin" element={<VerifyLogin/>}/>    
-       <Route path="/Signup" element={<Signup/>}/> 
-       <Route path="/Login" element={<Login/>}/> 
-       <Route path="/Forget" element={<Forget/>}/> 
-       <Route path="/Videopage/:id" element={<Videopage/>}/> 
-       <Route path="/:channel" element={<ChannelPage/>}/> 
-       <Route path="/Createvideo" element={<Createvideo/>}/> 
-     
-
+       <Route path="/trending" element={<Trending/>}/>    
+       <Route path="/verifyregister" element={<VerifyRegister/>}/>    
+       <Route path="/verifylogin" element={<VerifyLogin/>}/>    
+       <Route path="/register" element={<Register/>}/> 
+       <Route path="/login" element={<Login/>}/> 
+       <Route path="/forgot" element={<Forgot/>}/> 
+       <Route path="/videopage/:id" element={<Videopage/>}/> 
+       <Route path="/:channel" element={<Channelpage/>}/> 
+       <Route path="/createvideo" element={<Createvideo/>}/> 
       </Routes>
       </Router>
       </> 

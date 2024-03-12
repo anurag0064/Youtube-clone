@@ -9,7 +9,6 @@
     "views": "23M Views •",
     "type": ["trending"],
     "upload_time": "2 months ago"
-
 },
 {
     "id": 2,
@@ -52,7 +51,7 @@
 {
     "id": 5,
     "title": "Super11 Asia Cup 2023 | Match 5 India vs Nepal Highlights" ,
-    "thumbnail" : "https://i.ytimg.com/vi/AZ_y53YbF3A/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLAG43VgiUPU83kilR1RaDA3sw9RYw",
+    "thumbnail" : "https://i.ytimg.com/vi/BfrJxGQEPSc/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCmTYKLJn28n9qiP_RBBnxQPLBOLg",
     "duration": "38.38",
     "video_url" : "https://www.youtube.com/embed/AZ_y53YbF3A?si=ihiYUST8sCtillya",
     "channel_name": "The Red Chilli Entertainment ",
@@ -60,7 +59,29 @@
     "views": "23M Views •",
     "type": ["trending"],
     "upload_time": "2 months ago"
+},
+{
+    "id": 6,
+    "title": "Super11 Asia Cup 2023 | Match 5 India vs Nepal Highlights" ,
+    "thumbnail" : "https://i.ytimg.com/vi/aSt6au1vOpM/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLA8y9FSXZwEHM_OSdGvK80lgqu_jw",
+    "duration": "38.38",
+    "video_url" : "https://www.youtube.com/embed/AZ_y53YbF3A?si=ihiYUST8sCtillya",
+    "channel_name": "The Red Chilli Entertainment ",
+    "channel_img" : "../assets/image/Red.jpg",
+    "views": "23M Views •",
+    "type": ["trending"],
+    "upload_time": "2 months ago"
+},
+{
+    "id": 7,
+    "title": "Super11 Asia Cup 2023 | Match 5 India vs Nepal Highlights" ,
+    "thumbnail" : "https://i.ytimg.com/vi/UdJGI5lEgiY/hqdefault.jpg?s…RUAAIhCGAE=&rs=AOn4CLAI9YkecQEbBHZuqT-UWDl77-QQGA",
+    "duration": "38.38",
+    "video_url" : "https://youtu.be/UdJGI5lEgiY?si=085bo_LgulkbTml8",
+    "channel_name": "The Red Chilli Entertainment ",
+    "channel_img" : "../assets/image/Red.jpg",
+    "views": "23M Views •",
+    "type": ["trending"],
+    "upload_time": "2 months ago"
 }
-
-
 ]
